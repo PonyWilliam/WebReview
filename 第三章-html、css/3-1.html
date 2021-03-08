@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width:100px;
+            padding:10px;
+            border:1px solid #ccc;
+            margin:10px;
+            /*box-sizing: border-box;*/
+        }
+        #div2 p{
+            font-size: 16px;
+            line-height:1;
+            margin-top:10px;
+            margin-bottom:100px;
+        }
+        #div3 .container{
+            padding:10px;
+            border:1px solid #ccc;
+        }
+        #div3 .clearfix::after{
+            content:"";
+            display:table;
+            clear: both;
+        }
+        #div3 .container .item{
+            width:100px;
+            height:100px;
+        }
+        #div3 .container .border-red{
+            border:1px solid red;
+        }
+        #div3 .container .border-blue{
+            border:1px solid blue;
+        }
+        #div3 .container .float-left{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        this is div1
+    </div>
+    <div id="div2">
+        <p>AAA</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p>BBB</p>
+        <!--
+            答案是15px
+        -->
+    </div>
+    <div id="div3">
+        用于测试top bottom的负数情况
+        <div class="container">
+            <div class="item border-red" style="margin-top:-20px">item1</div>
+            <div class="item border-blue">item2</div>
+        </div>
+        用于测试lef right的负数情况
+        <div class="container clearfix">
+            <div class="item border-red float-left" style="margin-right:-20px;">item3</div>
+            <div class="item border-blue float-left">item4</div>
+        </div>
+    </div>
+    <div id="div4">
+        
+    </div>
+</body>
+<script>
+    //alert(document.getElementById('div1').offsetWidth)
+</script>
+</html>
